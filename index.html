@@ -58,6 +58,7 @@
         canvas {
             max-width: 100%;
             height: auto !important;
+            aspect-ratio: 16/9;
         }
     </style>
 </head>
@@ -153,18 +154,24 @@
                     datasets: [{
                         label: label,
                         data: historicalData,
-                        borderColor: color,
+                        borderColor: 'white',
                         tension: 0.4,
-                        fill: true,
-                        backgroundColor: color + '33'
+                        fill: false,
+                        borderWidth: 2
                     }]
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: true,
                     scales: { 
+                        x: {
+                            grid: { color: 'white' },
+                            ticks: { color: 'white' }
+                        },
                         y: { 
                             beginAtZero: true,
-                            grid: { color: 'rgba(255,255,255,0.1)' }
+                            grid: { color: 'white' },
+                            ticks: { color: 'white' }
                         }
                     },
                     plugins: {
